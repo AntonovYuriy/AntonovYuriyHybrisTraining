@@ -10,9 +10,10 @@
  Information and shall use it only in accordance with the terms of the
  license agreement you entered into with hybris.
 
+
 -->
 
-<project name="cuppy" default="all">
+<project name="cuppytrail" default="all">
 	<property file="platformhome.properties" />
 
 	<!-- next line is only for eclipse to get rid of warnings -->
