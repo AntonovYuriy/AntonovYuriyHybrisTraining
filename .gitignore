@@ -20,4 +20,8 @@
 /bin/ext-template/
 /bin/ext-smartedit
 /bin/ext-webservices
-/cuppy/.idea/
+*.idea
+*.settings
+*classes
+*gensrc
+*.externalToolBuilders
