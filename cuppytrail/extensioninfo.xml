@@ -23,7 +23,8 @@
                 
       <!-- you should add all required extensions to this list, except platform extensions which are automatically required -->        
       <!-- <requires-extension name="cms"/> -->        
-       
+
+		<requires-extension name="cuppy"/>
  
       <coremodule    packageroot="de.hybris.platform.cuppytrail"
                     manager="de.hybris.platform.cuppytrail.jalo.CuppytrailManager"
