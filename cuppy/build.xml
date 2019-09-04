@@ -152,6 +152,7 @@
 		<pmd extensions="${extname}" />
 	</target>
 
+	
 	<target name="localizationtest" description="runs the localizationtest to see if all types are localized within the extension">
 		<annotationtests extensions="${extname}" packages="*.LocalizationTest" />
 	</target>
