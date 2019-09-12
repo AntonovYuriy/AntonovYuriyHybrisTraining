@@ -10,6 +10,7 @@
  Information and shall use it only in accordance with the terms of the
  license agreement you entered into with hybris.
 
+
 -->
 
 <project name="cuppy" default="all">
@@ -151,7 +152,6 @@
 	<target name="codequality" description="executes all codequality tests for this extension">
 		<pmd extensions="${extname}" />
 	</target>
-
 
 	<target name="localizationtest" description="runs the localizationtest to see if all types are localized within the extension">
 		<annotationtests extensions="${extname}" packages="*.LocalizationTest" />
