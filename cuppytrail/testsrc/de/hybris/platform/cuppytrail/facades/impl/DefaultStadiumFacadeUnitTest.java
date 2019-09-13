@@ -125,7 +125,7 @@ public class DefaultStadiumFacadeUnitTest
         /**
          * We instantiate an object that we would like to be returned to StadiumFacade when the mocked out
          * StadiumService's method getStadium is called. This will be the StadiumModel for wembley stadium.
-         */
+         */ 
         // create wembley stadium
         final StadiumModel wembley = dummyDataStadium();
 
