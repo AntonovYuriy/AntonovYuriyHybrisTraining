@@ -25,3 +25,6 @@
 classes
 gensrc
 .externalToolBuilders
+doc
+eclipsebin
+lib
