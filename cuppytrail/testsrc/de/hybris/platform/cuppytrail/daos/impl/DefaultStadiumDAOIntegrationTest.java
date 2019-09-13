@@ -55,6 +55,7 @@ public class DefaultStadiumDAOIntegrationTest extends ServicelayerTransactionalT
     /** Capacity of test stadium. */
     private static final Integer STADIUM_CAPACITY = Integer.valueOf(12345);
 
+
     @Test
     public void stadiumDAOTest()
     {

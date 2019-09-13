@@ -26,6 +26,7 @@ import org.junit.Test;
 /**
  * JUnit Tests for the Cuppytrail extension
  */
+
 public class CuppytrailTest extends HybrisJUnit4TransactionalTest
 {
 	/** Edit the local|project.properties to change logging behaviour (properties log4j.*). */

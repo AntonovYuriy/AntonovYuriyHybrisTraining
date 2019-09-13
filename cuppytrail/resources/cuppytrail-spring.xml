@@ -22,6 +22,7 @@
 
 	<context:component-scan base-package="de.hybris.platform.cuppytrail"/>
 
+
 	<alias name="defaultStadiumService" alias="stadiumService"/>
 	<bean id="defaultStadiumService" class="de.hybris.platform.cuppytrail.impl.DefaultStadiumService">
 		<property name="stadiumDAO" ref="stadiumDAO"/>
