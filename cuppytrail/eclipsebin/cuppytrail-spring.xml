@@ -32,6 +32,14 @@
 	<bean id="defaultStadiumFacade" class="de.hybris.platform.cuppytrail.facades.impl.DefaultStadiumFacade">
 		<property name="stadiumService" ref="stadiumService" />
 	</bean>
+<!--
+	<bean id="cuppytrailSystemSetup"
+		  class="de.hybris.platform.cuppytrail.systemsetup.CuppyTrailSystemSetup"
+		  scope="master">
+		<property name="importService" ref="importService" />
+	</bean>
+-->
+
 
 <!-- OLD
 <beans xmlns="http://www.springframework.org/schema/beans"
