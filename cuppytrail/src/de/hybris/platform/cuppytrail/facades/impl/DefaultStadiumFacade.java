@@ -73,7 +73,7 @@ public class DefaultStadiumFacade implements StadiumFacade
                 summary.setGuestGoals(guestGoals);
                 summary.setHomeGoals(homeGoals);
                 final String formattedDate = DateFormat.getDateTimeInstance(DateFormat.MEDIUM,  DateFormat.SHORT).format(matchDate);
-                final String matchSummaryFormatted = homeTeam + ":( " + homeGoals + " ) " + guestTeam + " ( " + guestGoals + " ) "
+                final String matchSummaryFormatted = homeTeam + ":( " + homeGoals + " ) - " + guestTeam + " ( " + guestGoals + " ), at "
                         + formattedDate;
                 summary.setMatchSummaryFormatted(matchSummaryFormatted);
                 matchSummary.add(summary);

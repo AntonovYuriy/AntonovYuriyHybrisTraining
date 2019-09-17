@@ -24,6 +24,7 @@ import org.mockito.MockitoAnnotations;
 
 public class FacadeTDDWithMockito
 {
+    @Mock
     private StadiumFacade stadiumFacade;
 
     @Mock
@@ -48,7 +49,7 @@ public class FacadeTDDWithMockito
     public void testFacade1()
     {
         final List<StadiumDataTO> stadiumDataTOs = stadiumFacade.getAllStadium();
-        assertEquals(1, stadiumDataTOs.size());
+        assertEquals(2, stadiumDataTOs.size());
         final StadiumDataTO stadiumDataTO = stadiumFacade.getStadiumDetails("Wembley");
         assertNotNull(stadiumDataTO);
     }
@@ -57,7 +58,7 @@ public class FacadeTDDWithMockito
     public void testFacade2()
     {
         final List<StadiumModel> stadiumModels = stadiumFacade.getStadiumService().getAllStadium();
-        assertEquals(2, stadiumModels.size());
+        assertEquals(1, stadiumModels.size());
         final StadiumModel stadiumModel = stadiumFacade.getStadiumService().getStadiumDetails("Wembley");
         assertNotNull(stadiumModel);
     }
