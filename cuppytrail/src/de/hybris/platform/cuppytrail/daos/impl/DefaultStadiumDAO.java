@@ -1,5 +1,6 @@
 package de.hybris.platform.cuppytrail.daos.impl;
 
+import de.hybris.platform.core.PK;
 import de.hybris.platform.cuppytrail.daos.StadiumDAO;
 import de.hybris.platform.cuppytrail.model.StadiumModel;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
@@ -61,5 +62,33 @@ public class DefaultStadiumDAO implements StadiumDAO
         query.addQueryParameter("code", code);
 
         return flexibleSearchService.<StadiumModel> search(query).getResult();
+    }
+
+    @Override
+    public Boolean deleteAllStadiumsInDAO() {
+        return true;
+    }
+
+    @Override
+    public Boolean deleteOneStadiumByNameInDAO(String name) {
+//        final String queryString = //
+//                "SELECT {p:" + StadiumModel.PK + "}" //
+//                        + "FROM {" + StadiumModel._TYPECODE + " AS p} "//
+//                        + "WHERE " + "{p:" + StadiumModel.CODE + "}=?code ";
+//
+//        final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
+//        query.addQueryParameter("code", name);
+//        try {
+//            flexibleSearchService.<StadiumModel> search(query);
+//            return true;
+//        } catch (Exception e) {
+//            return false;
+//        }
+        return true;
+    }
+
+    @Override
+    public Boolean deleteOneStadiumByPKInDAO(PK pk) {
+        return null;
     }
 }

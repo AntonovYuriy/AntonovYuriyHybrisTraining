@@ -1,5 +1,6 @@
 package de.hybris.platform.cuppytrail.impl;
 
+import de.hybris.platform.core.PK;
 import de.hybris.platform.cuppytrail.StadiumService;
 import de.hybris.platform.cuppytrail.daos.StadiumDAO;
 import de.hybris.platform.cuppytrail.model.StadiumModel;
@@ -43,9 +44,25 @@ public class DefaultStadiumService implements StadiumService
         return result.get(0);
     }
 
+    @Override
+    public Boolean deleteAllStadiumsInService() {
+        return stadiumDAO.deleteAllStadiumsInDAO();
+    }
+
+    @Override
+    public Boolean deleteOneStadiumByNameInService(String name) {
+        return stadiumDAO.deleteOneStadiumByNameInDAO(name);
+    }
+
+    @Override
+    public Boolean deleteOneStadiumByPKInService(PK pk) {
+        return stadiumDAO.deleteOneStadiumByPKInDAO(pk);
+    }
+
     @Required
     public void setStadiumDAO(final StadiumDAO stadiumDAO)
     {
         this.stadiumDAO = stadiumDAO;
     }
+
 }
