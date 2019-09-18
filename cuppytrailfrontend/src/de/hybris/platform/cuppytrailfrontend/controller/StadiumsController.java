@@ -29,6 +29,7 @@ public class StadiumsController
         return "StadiumListing";
     }
 
+
     @RequestMapping(value = "/stadiums/{stadiumName}")
     public String showStadiumDetails(@PathVariable String stadiumName, final Model model) throws UnsupportedEncodingException
     {

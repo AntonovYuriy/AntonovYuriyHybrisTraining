@@ -7,6 +7,7 @@
 <ul>
     <c:set var="count" value="0" scope="page" />
 
+
     <c:forEach var="stadium" items="${stadiums}">
         <c:set var="count" value="${count + 1}" scope="page"/>
         <form action="${pageContext.request.contextPath}/deleteStadium/${stadium.name}" method="post">

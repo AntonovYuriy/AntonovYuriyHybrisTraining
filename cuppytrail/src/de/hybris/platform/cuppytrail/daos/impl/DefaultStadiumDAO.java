@@ -69,6 +69,7 @@ public class DefaultStadiumDAO implements StadiumDAO
         return true;
     }
 
+
     @Override
     public Boolean deleteOneStadiumByNameInDAO(String name) {
 //        final String queryString = //
