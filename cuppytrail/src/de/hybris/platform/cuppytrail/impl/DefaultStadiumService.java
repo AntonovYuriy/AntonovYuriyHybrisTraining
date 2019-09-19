@@ -8,12 +8,18 @@ import de.hybris.platform.servicelayer.exceptions.AmbiguousIdentifierException;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 
 import java.util.List;
+import java.util.Objects;
 
+import de.hybris.platform.servicelayer.internal.model.impl.DefaultModelService;
+import de.hybris.platform.servicelayer.model.ModelService;
+import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Required;
 
 public class DefaultStadiumService implements StadiumService
 {
     private StadiumDAO stadiumDAO;
+
+    private ModelService modelService;
 
     /**
      * Gets all stadiums by delegating to {@link StadiumDAO#findStadiums()}.
@@ -46,23 +52,44 @@ public class DefaultStadiumService implements StadiumService
 
     @Override
     public Boolean deleteAllStadiumsInService() {
-        return stadiumDAO.deleteAllStadiumsInDAO();
+        List<StadiumModel> stadiums = stadiumDAO.findStadiums();
+        if (CollectionUtils.isNotEmpty(stadiums)) {
+            modelService.removeAll(stadiums);
+            return true;
+        } else return false;
     }
 
     @Override
     public Boolean deleteOneStadiumByNameInService(String name) {
-        return stadiumDAO.deleteOneStadiumByNameInDAO(name);
+        StadiumModel stadium = (StadiumModel) stadiumDAO.findStadiumsByCode(name);
+        if (Objects.nonNull(stadium)) {
+            modelService.remove(stadium);
+            return true;
+        } else return false;
     }
 
     @Override
     public Boolean deleteOneStadiumByPKInService(PK pk) {
-        return stadiumDAO.deleteOneStadiumByPKInDAO(pk);
+        return null;
     }
+
+//    @Override
+//    public Boolean deleteOneStadiumByPKInService(PK pk) {
+//        return stadiumDAO.deleteOneStadiumByPKInDAO(pk);
+//    }
 
     @Required
     public void setStadiumDAO(final StadiumDAO stadiumDAO)
     {
         this.stadiumDAO = stadiumDAO;
+    }
+
+    /**
+     *
+     * @param modelService
+     */
+    public void setModelService(DefaultModelService modelService) {
+        this.modelService = modelService;
     }
 
 }

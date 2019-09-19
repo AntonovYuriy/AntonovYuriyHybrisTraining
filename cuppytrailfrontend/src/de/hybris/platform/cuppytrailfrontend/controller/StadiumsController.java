@@ -46,7 +46,6 @@ public class StadiumsController
     public String deleteAllStadiums(final Model model) throws UnsupportedEncodingException
     {
         stadiumFacade.deleteAllStadiumsInFacade();
-//        return "StadiumListing";
         return "redirect:/stadiums";
     }
 
@@ -55,7 +54,6 @@ public class StadiumsController
     {
         stadiumName = URLDecoder.decode(stadiumName, "UTF-8");
         stadiumFacade.deleteOneStadiumByNameInFacade(stadiumName);
-//        return "StadiumListing";
         return "redirect:/stadiums";
     }
 
