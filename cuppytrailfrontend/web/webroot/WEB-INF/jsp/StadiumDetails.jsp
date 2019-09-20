@@ -13,6 +13,8 @@ Matches:<br>
         <li>${match.matchSummaryFormatted}</li>
     </c:forEach>
 </ul>
+<a href="../addNewStadium">Add New Stadium</a>
+<br/>
 <a href="../stadiums">Back to Stadium Listing</a>
 </body>
 </html>

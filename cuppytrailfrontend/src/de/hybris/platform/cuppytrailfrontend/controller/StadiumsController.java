@@ -57,6 +57,13 @@ public class StadiumsController
         return "redirect:/stadiums";
     }
 
+    @RequestMapping(value = "/addNewStadium")
+    public String addNewStadium(String name, int capacity)
+    {
+        stadiumFacade.addNewStadium(name, capacity);
+        return "AddNewStadium";
+    }
+
         @Autowired
     public void setFacade(final StadiumFacade facade)
     {

@@ -26,4 +26,6 @@ public interface StadiumService
     void deleteAllStadiumsInService();
 
     void deleteOneStadiumByNameInService (String name);
+
+    void addNewStadiumInService(String name, int capacity);
 }

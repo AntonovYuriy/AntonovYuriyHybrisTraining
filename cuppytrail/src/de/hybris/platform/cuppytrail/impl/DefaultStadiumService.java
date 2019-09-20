@@ -66,6 +66,10 @@ public class DefaultStadiumService implements StadiumService
         }
     }
 
+    @Override
+    public void addNewStadiumInService(String name, int capacity) {
+        ////////////// NEED LOGICS!!!
+    }
 
     @Required
     public void setStadiumDAO(final StadiumDAO stadiumDAO)

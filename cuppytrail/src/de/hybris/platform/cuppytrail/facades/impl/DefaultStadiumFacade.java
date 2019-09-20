@@ -98,6 +98,11 @@ public class DefaultStadiumFacade implements StadiumFacade
          stadiumService.deleteOneStadiumByNameInService(name);
     }
 
+    @Override
+    public void addNewStadium(String name, int capacity) {
+        stadiumService.addNewStadiumInService(name, capacity);
+    }
+
     @Required
     public void setStadiumService(final StadiumService stadiumService)
     {

@@ -15,4 +15,6 @@ public interface StadiumFacade
     void deleteAllStadiumsInFacade();
 
     void deleteOneStadiumByNameInFacade (String name);
+
+    void addNewStadium(String name, int capacity);
 }

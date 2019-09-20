@@ -18,7 +18,7 @@
             </li>
         </form>
     </c:forEach>
-
+    <br/>
     <c:choose>
         <c:when test="${fn:length(stadiums) gt 0}">
             <a class="btn btn-default" href="./deleteAllStadiums" role="button">Delete all stadiums</a>
@@ -33,6 +33,11 @@
             <br/>
         </c:otherwise>
     </c:choose>
+    <br/>
+    <a href="${pageContext.request.contextPath}/AddNewStadium">Add New Stadium</a>
+    <br/>
+    <a href="${pageContext.request.contextPath}/stadiums">Back to Stadium Listing</a>
+
 </ul>
 </body>
 </html>
