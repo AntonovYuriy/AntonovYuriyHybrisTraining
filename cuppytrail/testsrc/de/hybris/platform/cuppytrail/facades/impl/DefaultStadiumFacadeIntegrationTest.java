@@ -6,12 +6,14 @@ import static org.junit.Assert.assertNotNull;
 
 import de.hybris.platform.cuppytrail.data.StadiumData;
 import de.hybris.platform.cuppytrail.facades.StadiumFacade;
+import de.hybris.platform.cuppytrail.jalo.Stadium;
 import de.hybris.platform.cuppytrail.model.StadiumModel;
 import de.hybris.platform.servicelayer.ServicelayerTransactionalTest;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 import de.hybris.platform.servicelayer.model.ModelService;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import javax.annotation.Resource;
 
@@ -22,8 +24,7 @@ import org.junit.Test;
 /**
  * This test file tests and demonstrates the behavior of the StadiumFacade's methods getAllStadiums and getStadium.
  */
-public class DefaultStadiumFacadeIntegrationTest extends ServicelayerTransactionalTest
-{
+public class DefaultStadiumFacadeIntegrationTest extends ServicelayerTransactionalTest {
     @Resource
     private StadiumFacade stadiumFacade;
 
@@ -35,8 +36,7 @@ public class DefaultStadiumFacadeIntegrationTest extends ServicelayerTransaction
     private final Integer STADIUM_CAPACITY = Integer.valueOf(90000);
 
     @Before
-    public void setUp()
-    {
+    public void setUp() {
         // This instance of a StadiumModel will be used by the tests
         stadiumModel = new StadiumModel();
         stadiumModel.setCode(STADIUM_NAME);
@@ -48,27 +48,43 @@ public class DefaultStadiumFacadeIntegrationTest extends ServicelayerTransaction
      * Tests exception behavior by getting a stadium which doesn't exist
      */
     @Test(expected = UnknownIdentifierException.class)
-    public void testInvalidParameter()
-    {
+    public void testInvalidParameter() {
         stadiumFacade.getStadium(STADIUM_NAME);
     }
+
 
     /**
      * Tests exception behavior by passing in a null parameter
      */
     @Test(expected = IllegalArgumentException.class)
-    public void testNullParameter()
-    {
+    public void testNullParameter() {
         stadiumFacade.getStadium(null);
     }
 
+    @Test(expected = NoSuchElementException.class)
+    public void testingThatICannotDelete2Times ()
+    {
+        stadiumFacade.deleteOneStadiumByNameInFacade(STADIUM_NAME);
+        stadiumFacade.deleteOneStadiumByNameInFacade(STADIUM_NAME);
+    }
+
+    @Test(expected = NoSuchElementException.class)
+    public void testingThatICannotDeleteWithWrongName ()
+    {
+        stadiumFacade.deleteOneStadiumByNameInFacade(STADIUM_NAME+"123");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testingThatICannotDeleteNULLName ()
+    {
+        stadiumFacade.deleteOneStadiumByNameInFacade(null);
+    }
 
     /**
      * Tests and demonstrates the Facade's methods
      */
     @Test
-    public void testStadiumFacade()
-    {
+    public void testStadiumFacade() {
         List<StadiumData> stadiumListData = stadiumFacade.getStadiums();
         assertNotNull(stadiumListData);
         final int size = stadiumListData.size();
