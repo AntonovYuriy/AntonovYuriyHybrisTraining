@@ -12,10 +12,7 @@ public interface StadiumFacade
 
     List<StadiumData> getStadiums();
 
-    Boolean deleteAllStadiumsInFacade();
+    void deleteAllStadiumsInFacade();
 
-    Boolean deleteOneStadiumByNameInFacade (String name);
-
-    Boolean deleteOneStadiumByPKInFacade (PK pk);
-
+    void deleteOneStadiumByNameInFacade (String name);
 }

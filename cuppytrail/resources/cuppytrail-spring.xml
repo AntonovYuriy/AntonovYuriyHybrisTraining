@@ -26,6 +26,7 @@
 	<alias name="defaultStadiumService" alias="stadiumService"/>
 	<bean id="defaultStadiumService" class="de.hybris.platform.cuppytrail.impl.DefaultStadiumService">
 		<property name="stadiumDAO" ref="stadiumDAO"/>
+		<property name="ModelService" ref="modelService"/>
 	</bean>
 
 	<alias name="defaultStadiumFacade" alias="stadiumFacade"/>

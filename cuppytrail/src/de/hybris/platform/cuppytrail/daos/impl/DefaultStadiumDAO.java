@@ -8,6 +8,7 @@ import de.hybris.platform.servicelayer.search.FlexibleSearchService;
 
 import java.util.List;
 
+import de.hybris.platform.servicelayer.search.SearchResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -66,31 +67,15 @@ public class DefaultStadiumDAO implements StadiumDAO
     }
 
     @Override
-    public Boolean deleteAllStadiumsInDAO() {
-        return true;
-    }
+    public StadiumModel getStadiumByName(String code) {
+        final String queryString = //
+                "SELECT {p:" + StadiumModel.PK + "}" //
+                        + "FROM {" + StadiumModel._TYPECODE + " AS p} "//
+                        + "WHERE " + "{p:" + StadiumModel.CODE + "}=?code ";
 
-
-    @Override
-    public Boolean deleteOneStadiumByNameInDAO(String name) {
-//        final String queryString = //
-//                "SELECT {p:" + StadiumModel.PK + "}" //
-//                        + "FROM {" + StadiumModel._TYPECODE + " AS p} "//
-//                        + "WHERE " + "{p:" + StadiumModel.CODE + "}=?code ";
-//
-//        final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
-//        query.addQueryParameter("code", name);
-//        try {
-//            flexibleSearchService.<StadiumModel> search(query);
-//            return true;
-//        } catch (Exception e) {
-//            return false;
-//        }
-        return true;
-    }
-
-    @Override
-    public Boolean deleteOneStadiumByPKInDAO(PK pk) {
-        return null;
+        final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
+        query.addQueryParameter("code", code) ;
+        SearchResult<StadiumModel> searchResult = flexibleSearchService.<StadiumModel>search(query);
+        return searchResult.getResult().iterator().next();
     }
 }

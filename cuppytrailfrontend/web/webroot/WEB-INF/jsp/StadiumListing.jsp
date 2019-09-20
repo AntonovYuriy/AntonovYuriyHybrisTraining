@@ -12,11 +12,12 @@
         <form action="${pageContext.request.contextPath}/deleteStadium/${stadium.name}" method="post">
             <li>
                 <a href="./stadiums/${stadium.name}">${count} - ${stadium.name} have ${stadium.capacity} capacity</a>
-                <input type="submit" value="Delete"/>
+                <input type="submit" value="Delete 1 stadium ${stadium.name}"/>
             </li>
         </form>
     </c:forEach>
 
+    <a class="btn btn-default" href="./deleteAllStadiums" role="button">Delete all stadiums</a>
     <br/>
     <form action="${pageContext.request.contextPath}/deleteAllStadiums" method="post">
     <input  type="submit"  value="Delete All"/>

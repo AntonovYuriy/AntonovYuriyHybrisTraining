@@ -51,32 +51,21 @@ public class DefaultStadiumService implements StadiumService
     }
 
     @Override
-    public Boolean deleteAllStadiumsInService() {
+    public void deleteAllStadiumsInService() {
         List<StadiumModel> stadiums = stadiumDAO.findStadiums();
         if (CollectionUtils.isNotEmpty(stadiums)) {
             modelService.removeAll(stadiums);
-            return true;
-        } else return false;
+        }
     }
 
     @Override
-    public Boolean deleteOneStadiumByNameInService(String name) {
-        StadiumModel stadium = (StadiumModel) stadiumDAO.findStadiumsByCode(name);
+    public void deleteOneStadiumByNameInService(String name) {
+        StadiumModel stadium = stadiumDAO.getStadiumByName(name);
         if (Objects.nonNull(stadium)) {
             modelService.remove(stadium);
-            return true;
-        } else return false;
+        }
     }
 
-    @Override
-    public Boolean deleteOneStadiumByPKInService(PK pk) {
-        return null;
-    }
-
-//    @Override
-//    public Boolean deleteOneStadiumByPKInService(PK pk) {
-//        return stadiumDAO.deleteOneStadiumByPKInDAO(pk);
-//    }
 
     @Required
     public void setStadiumDAO(final StadiumDAO stadiumDAO)

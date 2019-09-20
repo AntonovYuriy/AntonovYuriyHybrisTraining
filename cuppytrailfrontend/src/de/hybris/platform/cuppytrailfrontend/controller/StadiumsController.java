@@ -43,20 +43,19 @@ public class StadiumsController
 
 
     @RequestMapping(value = "/deleteAllStadiums")
-    public String deleteAllStadiums(final Model model) throws UnsupportedEncodingException
+    public String deleteAllStadiums()
     {
         stadiumFacade.deleteAllStadiumsInFacade();
         return "redirect:/stadiums";
     }
 
     @RequestMapping(value = "/deleteStadium/{stadiumName}")
-    public String deleteStadium(@PathVariable String stadiumName, final Model model) throws UnsupportedEncodingException
+    public String deleteStadium(@PathVariable String stadiumName) throws UnsupportedEncodingException
     {
         stadiumName = URLDecoder.decode(stadiumName, "UTF-8");
         stadiumFacade.deleteOneStadiumByNameInFacade(stadiumName);
         return "redirect:/stadiums";
     }
-
 
         @Autowired
     public void setFacade(final StadiumFacade facade)

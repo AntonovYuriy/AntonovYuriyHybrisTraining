@@ -89,18 +89,13 @@ public class DefaultStadiumFacade implements StadiumFacade
     }
 
     @Override
-    public Boolean deleteAllStadiumsInFacade() {
-        return stadiumService.deleteAllStadiumsInService();
+    public void deleteAllStadiumsInFacade() {
+        stadiumService.deleteAllStadiumsInService();
     }
 
     @Override
-    public Boolean deleteOneStadiumByNameInFacade(String name) {
-        return deleteOneStadiumByNameInFacade(name);
-    }
-
-    @Override
-    public Boolean deleteOneStadiumByPKInFacade(PK pk) {
-        return stadiumService.deleteOneStadiumByPKInService(pk);
+    public void deleteOneStadiumByNameInFacade(String name) {
+         stadiumService.deleteOneStadiumByNameInService(name);
     }
 
     @Required

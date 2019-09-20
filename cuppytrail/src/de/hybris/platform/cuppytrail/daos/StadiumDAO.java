@@ -1,7 +1,5 @@
 package de.hybris.platform.cuppytrail.daos;
 
-import de.hybris.platform.core.PK;
-import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.cuppytrail.model.StadiumModel;
 
 import java.util.List;
@@ -29,9 +27,6 @@ public interface StadiumDAO
      */
     List<StadiumModel> findStadiumsByCode(String code);
 
-    Boolean deleteAllStadiumsInDAO();
+    StadiumModel getStadiumByName(String code);
 
-    Boolean deleteOneStadiumByNameInDAO (String name);
-
-    Boolean deleteOneStadiumByPKInDAO (PK pk);
 }

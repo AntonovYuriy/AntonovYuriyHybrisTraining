@@ -1,6 +1,5 @@
 package de.hybris.platform.cuppytrail;
 
-import de.hybris.platform.core.PK;
 import de.hybris.platform.cuppytrail.model.StadiumModel;
 
 import java.util.List;
@@ -24,10 +23,7 @@ public interface StadiumService
      */
     StadiumModel getStadiumForCode(String code);
 
-    Boolean deleteAllStadiumsInService();
+    void deleteAllStadiumsInService();
 
-    Boolean deleteOneStadiumByNameInService (String name);
-
-    Boolean deleteOneStadiumByPKInService (PK pk);
-
+    void deleteOneStadiumByNameInService (String name);
 }
