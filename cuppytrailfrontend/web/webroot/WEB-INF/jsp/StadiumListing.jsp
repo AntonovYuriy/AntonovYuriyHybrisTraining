@@ -19,6 +19,9 @@
         </form>
     </c:forEach>
     <br/>
+    Total ${count} stadiums found
+    <br/>
+    <br/>
     <c:choose>
         <c:when test="${fn:length(stadiums) gt 0}">
             <a class="btn btn-default" href="./deleteAllStadiums" role="button">Delete all stadiums</a>
@@ -33,6 +36,7 @@
             <br/>
         </c:otherwise>
     </c:choose>
+
     <br/>
     <a href="${pageContext.request.contextPath}/addNewStadium">Add New Stadium</a>
     <br/>
