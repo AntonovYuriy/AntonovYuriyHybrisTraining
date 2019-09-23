@@ -34,7 +34,7 @@
         </c:otherwise>
     </c:choose>
     <br/>
-    <a href="${pageContext.request.contextPath}/AddNewStadium">Add New Stadium</a>
+    <a href="${pageContext.request.contextPath}/addNewStadium">Add New Stadium</a>
     <br/>
     <a href="${pageContext.request.contextPath}/stadiums">Back to Stadium Listing</a>
 

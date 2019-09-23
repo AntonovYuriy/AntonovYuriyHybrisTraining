@@ -7,13 +7,13 @@
 
 Add New stadium<br><br>
 
-<form action="${pageContext.request.contextPath}/stadiums" method="post">
+<form action="${pageContext.request.contextPath}/stadiumAddingProcedure" method="post">
     <p> Name <input type="text" name="name"></p>
     <p> Capacity <input type="text" name="capacity"></p>
-    <p><input type="submit" value="Отправить"></p>
+    <p><input type="submit" value="Add new unknown stadium"></p>
 </form>
 
 </ul>
-<a href="../stadiums">Back to Stadium Listing</a>
+<a href="${pageContext.request.contextPath}/stadiums">Back to Stadium Listing</a>
 </body>
 </html>

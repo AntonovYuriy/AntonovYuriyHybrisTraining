@@ -68,7 +68,12 @@ public class DefaultStadiumService implements StadiumService
 
     @Override
     public void addNewStadiumInService(String name, int capacity) {
-        ////////////// NEED LOGICS!!!
+        if ((Objects.nonNull(name)) & (Objects.nonNull(capacity))) {
+            StadiumModel stadium = new StadiumModel ();
+            stadium.setCode(name);
+            stadium.setCapacity(capacity);
+            modelService.save(stadium);
+        }
     }
 
     @Required

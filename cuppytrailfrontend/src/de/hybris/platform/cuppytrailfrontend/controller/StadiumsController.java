@@ -6,6 +6,7 @@ import de.hybris.platform.cuppytrailfrontend.StadiumsNameEncoded;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,12 +59,21 @@ public class StadiumsController
     }
 
     @RequestMapping(value = "/addNewStadium")
-    public String addNewStadium(String name, int capacity)
+//    public String addNewStadium(String name, int capacity)
+    public String addNewStadium()
     {
-        stadiumFacade.addNewStadium(name, capacity);
+//        stadiumFacade.addNewStadium(name, capacity);
         return "AddNewStadium";
     }
 
+    @RequestMapping(value = "/stadiumAddingProcedure")
+    public String stadiumAddingProcedure()
+    {
+        String name = "Torpedo" + LocalDateTime.now().getMinute() + LocalDateTime.now().getSecond();
+        int capacity = LocalDateTime.now().getMinute() + LocalDateTime.now().getSecond();
+        stadiumFacade.addNewStadium(name, capacity);
+        return "redirect:/stadiums";
+    }
         @Autowired
     public void setFacade(final StadiumFacade facade)
     {
