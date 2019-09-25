@@ -34,7 +34,10 @@
 		<property name="stadiumService" ref="stadiumService" />
 	</bean>
 
+	<bean id="delAllStJob" class="de.hybris.platform.cuppytrail.jobs.DeletingAllStadiumsJob" autowire="byName"/>
+	<bean id="addStFromImpFile" class="de.hybris.platform.cuppytrail.jobs.AddStadiumsFromImpexFile" autowire="byName"/>
 	<bean id="sendRankingJob" class="de.hybris.platform.cuppytrail.jobs.SendRankingJob" autowire="byName"/>
+
 
 
 <!--

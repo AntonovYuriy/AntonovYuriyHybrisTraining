@@ -1,6 +1,5 @@
 package de.hybris.platform.cuppytrail.impl;
 
-import de.hybris.platform.core.PK;
 import de.hybris.platform.cuppytrail.StadiumService;
 import de.hybris.platform.cuppytrail.daos.StadiumDAO;
 import de.hybris.platform.cuppytrail.model.StadiumModel;
