@@ -38,6 +38,8 @@
     </c:choose>
 
     <br/>
+    <a href="${pageContext.request.contextPath}/addNewRandomStadium">Add New Random Stadium</a>
+    <br/>
     <a href="${pageContext.request.contextPath}/addNewStadium">Add New Stadium</a>
     <br/>
     <a href="${pageContext.request.contextPath}/stadiums">Back to Stadium Listing</a>

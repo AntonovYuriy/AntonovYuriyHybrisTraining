@@ -15,6 +15,8 @@ Matches:<br>
 </ul>
 <a href="../addNewStadium">Add New Stadium</a>
 <br/>
+<a href="../addNewRandomStadium">Add New Random Stadium</a>
+<br/>
 <a href="../stadiums">Back to Stadium Listing</a>
 </body>
 </html>

@@ -51,6 +51,14 @@
 		<property name="clusterService" ref="defaultClusterService"/>
 	</bean>
 
+
+	<!-- PERSONAL TASK WITH EVENTS	-->
+
+	<bean id="deleteLastStadiumInterceptor" class="de.hybris.platform.cuppytrail.interceptors.DeleteLastStadiumInterceptor"/>
+	<bean id="deleteLastStadiumInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="deleteLastStadiumInterceptor" />
+		<property name="typeCode" value="Stadium" />
+	</bean>
 <!--
 	<bean id="cuppytrailSystemSetup"
 		  class="de.hybris.platform.cuppytrail.systemsetup.CuppyTrailSystemSetup"

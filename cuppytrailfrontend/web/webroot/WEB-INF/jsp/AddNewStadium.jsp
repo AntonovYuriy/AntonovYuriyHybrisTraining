@@ -7,7 +7,7 @@
 
 Add New stadium<br><br>
 
-<form action="${pageContext.request.contextPath}/stadiumAddingProcedure" method="post">
+<form action="${pageContext.request.contextPath}/addNewStadium" method="post">
     <p> Name <input type="text" name="name"></p>
     <p> Capacity <input type="text" name="capacity"></p>
     <p><input type="submit" value="Add new unknown stadium"></p>
