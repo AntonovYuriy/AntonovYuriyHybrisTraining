@@ -2,6 +2,7 @@ package de.hybris.platform.cuppytrail.interceptors;
 
 import de.hybris.platform.cuppytrail.StadiumService;
 import de.hybris.platform.cuppytrail.events.DeleteStadiumEvent;
+import de.hybris.platform.cuppytrail.impl.DefaultStadiumService;
 import de.hybris.platform.cuppytrail.model.StadiumModel;
 import de.hybris.platform.servicelayer.event.EventService;
 import de.hybris.platform.servicelayer.interceptor.InterceptorContext;
@@ -18,8 +19,9 @@ public class DeleteLastStadiumInterceptor implements ValidateInterceptor {
 
     @Autowired
     private EventService eventService;
-//    private DefaultStadiumService StService;
 
+    @Autowired
+    private StadiumService st;
 
     @Override
     public void onValidate(Object model, InterceptorContext interceptorContext) throws InterceptorException {
@@ -30,13 +32,11 @@ public class DeleteLastStadiumInterceptor implements ValidateInterceptor {
     }
 
     private boolean IsItLastStadium() {
-        StadiumService st = new StadiumService();
         final Integer QuantityOfStadiumsAtTheBeginning = st.getStadiums().size();
         LOG.info ("==========================================================");
         LOG.info ("QuantityOfStadiumsAtTheBeginning = " + QuantityOfStadiumsAtTheBeginning);
         LOG.info ("==========================================================");
-        if (QuantityOfStadiumsAtTheBeginning < 0) {
-
+        if (QuantityOfStadiumsAtTheBeginning < 2) {
 //            CHANGE CHECKING TO ==1
             return true;
         }

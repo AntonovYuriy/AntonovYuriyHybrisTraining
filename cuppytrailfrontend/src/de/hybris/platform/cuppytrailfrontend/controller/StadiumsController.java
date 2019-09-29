@@ -2,6 +2,7 @@ package de.hybris.platform.cuppytrailfrontend.controller;
 
 import de.hybris.platform.cuppytrail.data.StadiumData;
 import de.hybris.platform.cuppytrail.facades.StadiumFacade;
+import de.hybris.platform.cuppytrail.facades.impl.DefaultStadiumFacade;
 import de.hybris.platform.cuppytrailfrontend.StadiumsNameEncoded;
 
 import java.io.UnsupportedEncodingException;
@@ -15,11 +16,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
 public class StadiumsController {
-    private StadiumFacade stadiumFacade;
+    private DefaultStadiumFacade stadiumFacade;
 
 
     @RequestMapping(value = "/stadiums")
@@ -53,18 +55,23 @@ public class StadiumsController {
         return "redirect:/stadiums";
     }
 
-    @RequestMapping(value = "/addNewStadium")
-    public String addNewStadium() {
-        return "redirect:/stadiums";
-    }
-
-//    @RequestMapping(value = "/addNewStadium", method = RequestMethod.POST)
-//    public String addNewStadium(String newName, int newCapacity) {
-//        stadiumFacade.addNewStadium(newName, newCapacity);
-//
-//        return "AddNewStadium";
+//    @RequestMapping(value = "/addNewStadium")
+//    public String addNewStadium() {
+//        return "redirect:/stadiums";
 //    }
 
+    @RequestMapping (value = "/addNewStadium", method = RequestMethod.GET)
+    public String goPageAddNewStadium () {
+        return "AddNewStadium";
+    }
+
+    @RequestMapping(value = "/addNewStadium", method = RequestMethod.POST)
+    public String addNewStadium(@RequestParam(value = "name", required = false) String newName, @RequestParam(value = "capacity", required = false) int newCapacity) {
+        stadiumFacade.addNewStadium(newName, newCapacity);
+//    public String addNewStadium() {
+//        stadiumFacade.addNewStadium("new", 123);
+        return "AddNewStadium";
+    }
 
 
     @RequestMapping(value = "/addNewRandomStadium")
@@ -76,7 +83,7 @@ public class StadiumsController {
     }
 
     @Autowired
-    public void setFacade(final StadiumFacade facade) {
+    public void setFacade(final DefaultStadiumFacade facade) {
         this.stadiumFacade = facade;
     }
 
