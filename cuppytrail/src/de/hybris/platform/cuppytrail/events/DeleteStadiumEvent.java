@@ -22,6 +22,6 @@ public class DeleteStadiumEvent extends AbstractEvent
     public String toString()
     {
 
-        return "stadium - " + this.code;
+        return "Trying delete stadium - " + this.code + " EVENT";
     }
 }

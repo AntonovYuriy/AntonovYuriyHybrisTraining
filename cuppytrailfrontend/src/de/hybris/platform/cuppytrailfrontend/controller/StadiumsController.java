@@ -1,7 +1,6 @@
 package de.hybris.platform.cuppytrailfrontend.controller;
 
 import de.hybris.platform.cuppytrail.data.StadiumData;
-import de.hybris.platform.cuppytrail.facades.StadiumFacade;
 import de.hybris.platform.cuppytrail.facades.impl.DefaultStadiumFacade;
 import de.hybris.platform.cuppytrailfrontend.StadiumsNameEncoded;
 
@@ -22,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class StadiumsController {
     private DefaultStadiumFacade stadiumFacade;
-
 
     @RequestMapping(value = "/stadiums")
     public String showStadiums(final Model model) {
@@ -55,21 +53,14 @@ public class StadiumsController {
         return "redirect:/stadiums";
     }
 
-//    @RequestMapping(value = "/addNewStadium")
-//    public String addNewStadium() {
-//        return "redirect:/stadiums";
-//    }
-
-    @RequestMapping (value = "/addNewStadium", method = RequestMethod.GET)
-    public String goPageAddNewStadium () {
+    @RequestMapping(value = "/addNewStadium", method = RequestMethod.GET)
+    public String goPageAddNewStadium() {
         return "AddNewStadium";
     }
 
     @RequestMapping(value = "/addNewStadium", method = RequestMethod.POST)
     public String addNewStadium(@RequestParam(value = "name", required = false) String newName, @RequestParam(value = "capacity", required = false) int newCapacity) {
         stadiumFacade.addNewStadium(newName, newCapacity);
-//    public String addNewStadium() {
-//        stadiumFacade.addNewStadium("new", 123);
         return "AddNewStadium";
     }
 
