@@ -10,6 +10,7 @@ import de.hybris.platform.servicelayer.interceptor.RemoveInterceptor;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
+
 public class DeleteLastStadiumInterceptor implements RemoveInterceptor {
 
     private static final int minimalSizeOFStadiumList = 1;

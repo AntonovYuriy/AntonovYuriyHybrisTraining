@@ -5,25 +5,22 @@ import de.hybris.platform.servicelayer.event.impl.AbstractEventListener;
 import de.hybris.platform.servicelayer.model.ModelService;
 
 import java.util.Locale;
+
 import org.apache.log4j.Logger;
 import org.jfree.util.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
+public class DeleteLastStadiumListener extends AbstractEventListener<DeleteStadiumEvent> {
 
-public class DeleteLastStadiumListener extends AbstractEventListener<DeleteStadiumEvent>
-{
-
-    static final private Logger LOG = Logger.getLogger(StadiumEventListener.class);
+    private Logger LOG = Logger.getLogger(this.getClass());
 
     @Autowired
     ModelService modelService;
 
     @Override
-    public void onEvent(final DeleteStadiumEvent event)
-    {
-        try
-        {
+    public void onEvent(final DeleteStadiumEvent event) {
+        try {
             LOG.info("### Entering event handler ###");
             Thread.sleep(2000);
 
@@ -32,11 +29,8 @@ public class DeleteLastStadiumListener extends AbstractEventListener<DeleteStadi
             news.setContent(content, Locale.ENGLISH);
             modelService.save(news);
             LOG.info("### News created: " + content + " ###");
-
-        }
-        catch (final InterruptedException e)
-        {
-            Log.info("Error during event processing");
+        } catch (final InterruptedException e) {
+            Log.info("Error during event processing in listener");
         }
     }
 }

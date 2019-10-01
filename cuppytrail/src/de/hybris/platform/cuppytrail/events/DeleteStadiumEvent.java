@@ -2,7 +2,6 @@ package de.hybris.platform.cuppytrail.events;
 
 import de.hybris.platform.servicelayer.event.events.AbstractEvent;
 
-
 public class DeleteStadiumEvent extends AbstractEvent
 {
     private final String code;
