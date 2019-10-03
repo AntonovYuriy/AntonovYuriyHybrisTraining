@@ -9,6 +9,7 @@ import java.net.URLDecoder;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import de.hybris.platform.servicelayer.exceptions.ModelRemovalException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -46,9 +47,13 @@ public class StadiumsController {
     }
 
     @RequestMapping(value = "/deleteStadium/{stadiumName}")
-    public String deleteStadium(@PathVariable String stadiumName) throws UnsupportedEncodingException {
+    public String deleteStadium(@PathVariable String stadiumName, Model model) throws UnsupportedEncodingException {
         stadiumName = URLDecoder.decode(stadiumName, "UTF-8");
-        stadiumFacade.deleteOneStadiumByNameInFacade(stadiumName);
+        try {
+            stadiumFacade.deleteOneStadiumByNameInFacade(stadiumName);
+        } catch (ModelRemovalException ex){
+            model.addAttribute("errorMessage", ex.getMessage());
+        }
         return "redirect:/stadiums";
     }
 

@@ -16,7 +16,7 @@ public class DeleteLastStadiumListener extends AbstractEventListener<DeleteStadi
     private Logger LOG = Logger.getLogger(this.getClass());
 
     @Autowired
-    ModelService modelService;
+    private ModelService modelService;
 
     @Override
     public void onEvent(final DeleteStadiumEvent event) {

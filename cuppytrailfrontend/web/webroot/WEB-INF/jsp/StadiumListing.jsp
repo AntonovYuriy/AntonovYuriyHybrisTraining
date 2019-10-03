@@ -9,6 +9,12 @@
 <ul>
     <c:set var="count" value="0" scope="page"/>
 
+    <div>
+        <h1>Error = ${errorMessage}</h1>
+    </div>
+
+    ${errorMessage}
+
     <c:forEach var="stadium" items="${stadiums}">
         <c:set var="count" value="${count + 1}" scope="page"/>
         <form action="${pageContext.request.contextPath}/deleteStadium/${stadium.name}" method="post">
