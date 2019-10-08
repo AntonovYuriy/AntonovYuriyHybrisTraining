@@ -9,10 +9,7 @@ import de.hybris.platform.cuppytrail.facades.StadiumFacade;
 import de.hybris.platform.cuppytrail.model.StadiumModel;
 
 import java.text.DateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 import org.springframework.beans.factory.annotation.Required;
 
@@ -64,7 +61,11 @@ public class DefaultStadiumFacade implements StadiumFacade
             sfd.setImageUrl(urlImg);
             stadiumFacadeData.add(sfd);
         }
-        return stadiumFacadeData;
+        if (stadiumFacadeData.isEmpty()) {
+            return new ArrayList<StadiumData>();
+        } else {
+            return stadiumFacadeData;
+        }
     }
 
     @Override
