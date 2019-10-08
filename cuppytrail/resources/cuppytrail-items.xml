@@ -49,6 +49,9 @@
                     <persistence type="property"/>
                     <defaultvalue>em().getEnumerationValue("StadiumType","openair")</defaultvalue>
                 </attribute>
+				<attribute qualifier="stadiumImage" type="MediaContainer" >
+					<persistence type="property"/>
+				</attribute>
             </attributes>
         </itemtype>
 

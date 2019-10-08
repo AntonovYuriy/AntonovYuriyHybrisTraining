@@ -12,6 +12,7 @@ Matches:<br>
     <c:forEach var="match" items="${stadium.matches}">
         <li>${match.matchSummaryFormatted}</li>
     </c:forEach>
+    <img src="${stadium.imageUrl}"/> <br/>
 </ul>
 <a href="../addNewStadium">Add New Stadium</a>
 <br/>

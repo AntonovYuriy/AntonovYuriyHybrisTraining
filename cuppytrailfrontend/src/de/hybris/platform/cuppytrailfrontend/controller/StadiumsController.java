@@ -24,7 +24,7 @@ public class StadiumsController {
 
     @RequestMapping(value = "/stadiums")
     public String showStadiums(final Model model) {
-        final List<StadiumData> stadiums = stadiumFacade.getStadiums();
+        final List<StadiumData> stadiums = stadiumFacade.getStadiums("stadiumListFormat");
         model.addAttribute("stadiums", stadiums);
         return "StadiumListing";
     }

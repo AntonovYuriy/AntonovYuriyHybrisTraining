@@ -21,6 +21,21 @@ public interface StadiumService
      * @throws de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException
      * in case no stadium for given code can be found
      */
+
+    /**
+     * Gets the url for an image with the given format
+     *
+     * @param format
+     *           format to be taken to identify the image
+     * @throws de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException
+     *            in case no format can be found
+     * @throws de.hybris.platform.servicelayer.exceptions.AmbiguousIdentifierException
+     *            in case more than one format is found
+     * @throws IllegalArgumentException
+     *            if given <code>format</code> is null
+     */
+    String getImageUrlFromStadium(StadiumModel stadium, String format);
+
     StadiumModel getStadiumForCode(String code);
 
     void deleteAllStadiumsInService();
@@ -28,4 +43,6 @@ public interface StadiumService
     void deleteOneStadiumByNameInService (String name);
 
     void addNewStadiumInService(String name, int capacity);
+
+
 }

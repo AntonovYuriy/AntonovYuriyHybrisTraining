@@ -20,6 +20,7 @@
         <form action="${pageContext.request.contextPath}/deleteStadium/${stadium.name}" method="post">
             <li>
                 <a href="./stadiums/${stadium.name}">${count} - ${stadium.name} have ${stadium.capacity} capacity</a>
+                <img style="margin-left:20px;vertical-align:top;margin-bottom:20px" src="${stadium.imageUrl}"/>
                 <input type="submit" value="Delete 1 stadium ${stadium.name}"/>
             </li>
         </form>
