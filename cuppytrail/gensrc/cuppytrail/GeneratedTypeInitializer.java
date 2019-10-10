@@ -105,6 +105,10 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 				single_createattr_MatchBet_matchScore();
 			
+				single_createattr_News_id();
+			
+				single_createattr_News_catalogVersion();
+			
 		createRelationAttributes(
 			"StadiumMatchRelation", 
 			false, 
@@ -224,6 +228,40 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 	}
 	
+	public void single_createattr_News_id() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"News", 
+					"id",  
+					null,
+					"java.lang.String",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.INITIAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_News_catalogVersion() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"News", 
+					"catalogVersion",  
+					null,
+					"CatalogVersion",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.INITIAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
 
 
 	/**
@@ -322,6 +360,26 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				}
 			
 			single_setAttributeProperties_MatchBet_matchScore();
+		
+				{
+				Map customPropsMap = new HashMap();
+				
+					customPropsMap.put( "catalogItemType", java.lang.Boolean.TRUE );
+				
+					customPropsMap.put( "catalogVersionAttributeQualifier", "catalogVersion" );
+				
+					customPropsMap.put( "uniqueKeyAttributeQualifier", "id" );
+				
+				changeMetaType(
+					"News",
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_News_id();
+		
+			single_setAttributeProperties_News_catalogVersion();
 		
 				setDefaultProperties(
 					"StadiumType",
@@ -472,6 +530,50 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 								null,
 								customPropsMap,
 								"matchBetScoreAttributeHandler"
+							);
+						}
+					
+						public void single_setAttributeProperties_News_id() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"News", 
+								"id",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_News_catalogVersion() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"News", 
+								"catalogVersion",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
 							);
 						}
 					

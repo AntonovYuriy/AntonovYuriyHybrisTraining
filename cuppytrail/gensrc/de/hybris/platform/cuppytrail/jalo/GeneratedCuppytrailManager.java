@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Oct 8, 2019 4:51:59 PM                      ---
+ * --- Generated at Oct 10, 2019 12:45:32 PM                    ---
  * ----------------------------------------------------------------
  *  
  * [y] hybris Platform
@@ -17,7 +17,9 @@
  */
 package de.hybris.platform.cuppytrail.jalo;
 
+import de.hybris.platform.catalog.jalo.CatalogVersion;
 import de.hybris.platform.cuppy.jalo.Match;
+import de.hybris.platform.cuppy.jalo.News;
 import de.hybris.platform.cuppytrail.constants.CuppytrailConstants;
 import de.hybris.platform.cuppytrail.constraints.NotEmptyCuppyConstraint;
 import de.hybris.platform.cuppytrail.jalo.Stadium;
@@ -25,6 +27,7 @@ import de.hybris.platform.jalo.GenericItem;
 import de.hybris.platform.jalo.Item;
 import de.hybris.platform.jalo.Item.AttributeMode;
 import de.hybris.platform.jalo.JaloBusinessException;
+import de.hybris.platform.jalo.JaloInvalidParameterException;
 import de.hybris.platform.jalo.JaloSystemException;
 import de.hybris.platform.jalo.SessionContext;
 import de.hybris.platform.jalo.extension.Extension;
@@ -45,6 +48,10 @@ public abstract class GeneratedCuppytrailManager extends Extension
 	{
 		final Map<String, Map<String, AttributeMode>> ttmp = new HashMap();
 		Map<String, AttributeMode> tmp = new HashMap<String, AttributeMode>();
+		tmp.put("id", AttributeMode.INITIAL);
+		tmp.put("catalogVersion", AttributeMode.INITIAL);
+		ttmp.put("de.hybris.platform.cuppy.jalo.News", Collections.unmodifiableMap(tmp));
+		tmp = new HashMap<String, AttributeMode>();
 		tmp.put("stadium", AttributeMode.INITIAL);
 		ttmp.put("de.hybris.platform.cuppy.jalo.Match", Collections.unmodifiableMap(tmp));
 		DEFAULT_INITIAL_ATTRIBUTES = ttmp;
@@ -59,6 +66,47 @@ public abstract class GeneratedCuppytrailManager extends Extension
 			ret.putAll(attr);
 		}
 		return ret;
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>News.catalogVersion</code> attribute.
+	 * @return the catalogVersion
+	 */
+	public CatalogVersion getCatalogVersion(final SessionContext ctx, final News item)
+	{
+		return (CatalogVersion)item.getProperty( ctx, CuppytrailConstants.Attributes.News.CATALOGVERSION);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>News.catalogVersion</code> attribute.
+	 * @return the catalogVersion
+	 */
+	public CatalogVersion getCatalogVersion(final News item)
+	{
+		return getCatalogVersion( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>News.catalogVersion</code> attribute. 
+	 * @param value the catalogVersion
+	 */
+	protected void setCatalogVersion(final SessionContext ctx, final News item, final CatalogVersion value)
+	{
+		// initial-only attribute: make sure this attribute can be set during item creation only
+		if ( ctx.getAttribute( "core.types.creation.initial") != Boolean.TRUE )
+		{
+			throw new JaloInvalidParameterException( "attribute '"+CuppytrailConstants.Attributes.News.CATALOGVERSION+"' is not changeable", 0 );
+		}
+		item.setProperty(ctx, CuppytrailConstants.Attributes.News.CATALOGVERSION,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>News.catalogVersion</code> attribute. 
+	 * @param value the catalogVersion
+	 */
+	protected void setCatalogVersion(final News item, final CatalogVersion value)
+	{
+		setCatalogVersion( getSession().getSessionContext(), item, value );
 	}
 	
 	public NotEmptyCuppyConstraint createNotEmptyCuppyConstraint(final SessionContext ctx, final Map attributeValues)
@@ -117,6 +165,47 @@ public abstract class GeneratedCuppytrailManager extends Extension
 	public String getName()
 	{
 		return CuppytrailConstants.EXTENSIONNAME;
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>News.id</code> attribute.
+	 * @return the id
+	 */
+	public String getId(final SessionContext ctx, final News item)
+	{
+		return (String)item.getProperty( ctx, CuppytrailConstants.Attributes.News.ID);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>News.id</code> attribute.
+	 * @return the id
+	 */
+	public String getId(final News item)
+	{
+		return getId( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>News.id</code> attribute. 
+	 * @param value the id
+	 */
+	protected void setId(final SessionContext ctx, final News item, final String value)
+	{
+		// initial-only attribute: make sure this attribute can be set during item creation only
+		if ( ctx.getAttribute( "core.types.creation.initial") != Boolean.TRUE )
+		{
+			throw new JaloInvalidParameterException( "attribute '"+CuppytrailConstants.Attributes.News.ID+"' is not changeable", 0 );
+		}
+		item.setProperty(ctx, CuppytrailConstants.Attributes.News.ID,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>News.id</code> attribute. 
+	 * @param value the id
+	 */
+	protected void setId(final News item, final String value)
+	{
+		setId( getSession().getSessionContext(), item, value );
 	}
 	
 	/**
