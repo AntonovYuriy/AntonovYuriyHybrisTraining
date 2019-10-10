@@ -60,7 +60,7 @@
 		<as:advanced-search xmlns:as="http://www.hybris.com/cockpitng/config/advancedsearch" connection-operator="AND">
 			<as:field-list>
 				<as:field name="code" operator="contains" selected="true"/>
-				<as:field name="StadiumType" selected="true"/>
+<!--				<as:field name="StadiumType" selected="true"/>-->
 				<as:field editor="java.lang.Long" name="pk" operator="equal" selected="false" sortable="false"/>
 			</as:field-list>
 			<as:sort-field name="code" asc="false" />
@@ -72,7 +72,7 @@
 			<editorArea:tab name="essentials">
 				<editorArea:section name="essentials">
 					<editorArea:attribute qualifier="code"/>
-					<editorArea:attribute qualifier="StadiumType"/>
+<!--					<editorArea:attribute qualifier="StadiumType"/>-->
 				</editorArea:section>
 				<editorArea:section name="data">
 					<editorArea:attribute qualifier="capacity"/>
