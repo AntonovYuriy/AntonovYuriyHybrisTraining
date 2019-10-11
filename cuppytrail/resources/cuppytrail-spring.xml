@@ -102,7 +102,7 @@
         <property name="start" value="00000000" />
         <property name="numeric" value="true" />
     </bean>
-    
+
     <!--
         <bean id="cuppytrailSystemSetup"
               class="de.hybris.platform.cuppytrail.systemsetup.CuppyTrailSystemSetup"
