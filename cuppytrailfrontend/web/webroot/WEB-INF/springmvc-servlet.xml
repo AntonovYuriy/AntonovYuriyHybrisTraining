@@ -7,6 +7,7 @@
     <context:annotation-config />
     <context:component-scan base-package="de.hybris.platform.cuppytrailfrontend" />
 
+
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
         <property name="prefix" value="/WEB-INF/jsp/" />

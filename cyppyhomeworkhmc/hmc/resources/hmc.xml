@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<configuration xmlns="hybris.de/schemas/hmc/generic"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="hybris.de/schemas/hmc/generic hmc.xsd">
+
+    <!-- Configuration for extension cuppytrail -->
+    <explorertree>
+        <group name="cuppyHomeWorkGroup">
+            <typeref type="CuppyUser"/>
+        </group>
+    </explorertree>
+
+    <type name="CuppyUser" mode="append">
+        <organizer>
+            <search mode="replace">
+                <condition attribute="name"/>
+                <condition attribute="username"/>
+                <condition attribute="phone"/>
+                <condition attribute="logIn"/>
+                <condition attribute="password"/>
+
+            </search>
+            <result>
+                <listview mode="replace">
+                    <itemlayout>
+                        <attribute name="name"/>
+                        <attribute name="username"/>
+                        <attribute name="phone"/>
+                        <attribute name="logIn"/>
+                        <attribute name="password"/>
+                    </itemlayout>
+                </listview>
+            </result>
+            <editor>
+                <essentials>
+                    <listlayout>
+                        <attribute name="name"/>
+                    </listlayout>
+                </essentials>
+            </editor>
+        </organizer>
+    </type>
+</configuration>

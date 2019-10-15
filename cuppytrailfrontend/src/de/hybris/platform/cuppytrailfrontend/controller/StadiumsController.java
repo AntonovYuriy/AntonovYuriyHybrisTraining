@@ -3,12 +3,6 @@ package de.hybris.platform.cuppytrailfrontend.controller;
 import de.hybris.platform.cuppytrail.data.StadiumData;
 import de.hybris.platform.cuppytrail.facades.impl.DefaultStadiumFacade;
 import de.hybris.platform.cuppytrailfrontend.StadiumsNameEncoded;
-
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.time.LocalDateTime;
-import java.util.List;
-
 import de.hybris.platform.servicelayer.exceptions.ModelRemovalException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,8 +12,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.time.LocalDateTime;
+import java.util.List;
+
 @Controller
 public class StadiumsController {
+
     private DefaultStadiumFacade stadiumFacade;
 
     @RequestMapping(value = "/stadiums")
@@ -51,7 +51,7 @@ public class StadiumsController {
         stadiumName = URLDecoder.decode(stadiumName, "UTF-8");
         try {
             stadiumFacade.deleteOneStadiumByNameInFacade(stadiumName);
-        } catch (ModelRemovalException ex){
+        } catch (ModelRemovalException ex) {
             model.addAttribute("errorMessage", ex.getMessage());
         }
         return "redirect:/stadiums";

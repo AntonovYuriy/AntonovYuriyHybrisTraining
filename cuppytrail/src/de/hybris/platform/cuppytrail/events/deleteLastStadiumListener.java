@@ -11,7 +11,7 @@ import org.jfree.util.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
-public class DeleteLastStadiumListener extends AbstractEventListener<DeleteStadiumEvent> {
+class DeleteLastStadiumListener extends AbstractEventListener<DeleteStadiumEvent> {
 
     private Logger LOG = Logger.getLogger(this.getClass());
 

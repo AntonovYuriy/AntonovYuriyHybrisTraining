@@ -19,11 +19,11 @@
       <!-- you should add all required extensions to this list, except platform extensions which are automatically required -->         
       <!-- <requires-extension name="cms"/> -->         
       
-		<requires-extension name="cuppytrail" />
+	<requires-extension name="cuppytrail" />
 		
-      <coremodule generated="true" manager="de.hybris.platform.cuppytrailfrontend.jalo.CuppytrailfrontendManager" packageroot="de.hybris.platform.cuppytrailfrontend"/>
+    <coremodule generated="true" manager="de.hybris.platform.cuppytrailfrontend.jalo.CuppytrailfrontendManager" packageroot="de.hybris.platform.cuppytrailfrontend"/>
 
-      <webmodule jspcompile="false" webroot="/cuppytrailfrontend"/>
+    <webmodule jspcompile="false" webroot="/cuppytrailfrontend"/>
 					
 	
 
