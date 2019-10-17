@@ -27,23 +27,27 @@
 				<attribute qualifier="name" type="java.lang.String" >
 					<description>Name of user</description>
 					<persistence type="property"/>
-					<modifiers unique="true"/>
+					<modifiers initial="true" optional="false" write="false"/>
 				</attribute>
 				<attribute qualifier="username" type="java.lang.String">
 					<description>Capacity</description>
 					<persistence type="property" />
+					<modifiers unique="true" initial="true" optional="false" write="false"/>
 				</attribute>
-				<attribute qualifier="phone" type="java.lang.Integer">
+				<attribute qualifier="phone" type="java.lang.String">
 					<description>Phone number</description>
 					<persistence type="property" />
+					<modifiers initial="true" optional="false" write="false"/>
 				</attribute>
 				<attribute qualifier="logIn" type="java.util.Date">
 					<description>Date of last login</description>
 					<persistence type="property" />
+					<modifiers initial="true" optional="false" write="false"/>
 				</attribute>
 				<attribute qualifier="password" type="java.lang.String">
 					<description>Password</description>
 					<persistence type="property" />
+					<modifiers initial="true" optional="false" write="false"/>
 				</attribute>
 			</attributes>
 		</itemtype>

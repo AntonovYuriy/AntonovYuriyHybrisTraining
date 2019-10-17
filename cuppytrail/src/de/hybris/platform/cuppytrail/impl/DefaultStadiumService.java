@@ -1,23 +1,21 @@
 package de.hybris.platform.cuppytrail.impl;
 
+import de.hybris.platform.core.model.media.MediaFormatModel;
+import de.hybris.platform.core.model.media.MediaModel;
 import de.hybris.platform.cuppytrail.StadiumService;
 import de.hybris.platform.cuppytrail.daos.StadiumDAO;
 import de.hybris.platform.cuppytrail.model.StadiumModel;
 import de.hybris.platform.servicelayer.exceptions.AmbiguousIdentifierException;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
+import de.hybris.platform.servicelayer.internal.model.impl.DefaultModelService;
+import de.hybris.platform.servicelayer.media.MediaService;
+import de.hybris.platform.servicelayer.model.ModelService;
+import org.apache.commons.collections.CollectionUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Required;
 
 import java.util.List;
 import java.util.Objects;
-
-import de.hybris.platform.servicelayer.internal.model.impl.DefaultModelService;
-import de.hybris.platform.servicelayer.model.ModelService;
-import org.apache.commons.collections.CollectionUtils;
-import org.springframework.beans.factory.annotation.Required;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import de.hybris.platform.core.model.media.MediaFormatModel;
-import de.hybris.platform.core.model.media.MediaModel;
-import de.hybris.platform.servicelayer.media.MediaService;
 
 public class DefaultStadiumService implements StadiumService {
     private StadiumDAO stadiumDAO;

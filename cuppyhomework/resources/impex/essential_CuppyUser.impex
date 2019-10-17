@@ -1,0 +1,10 @@
+INSERT_UPDATE CuppyUser; name; username[unique=true]; phone; login[dateformat=dd.MM.yyyy HH:mm:ss]; password
+; User1; Vasya; 12445; 12.04.2018 04:30:00; password1
+; 1; 1; 0000000; 10.05.2019 01:01:01; 1
+; User1; test1; 12445467; 10.15.2019 01:01:01; password1
+; User2; test2; 12445467; 10.16.2019 01:01:01; password1
+; User3; test3; 12445467; 10.17.2019 01:01:01; password1
+; User4; test4; 12445467; 10.18.2019 01:01:01; password1
+; User5; test5; 12445467; 10.19.2019 01:01:01; password1
+; User6; test6; 12445467; 10.20.2019 01:01:01; password1
+; User7; test7; 12445467; 10.21.2019 01:01:01; password1

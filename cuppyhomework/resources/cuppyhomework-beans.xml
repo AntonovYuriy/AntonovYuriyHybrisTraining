@@ -17,6 +17,14 @@
 
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="beans.xsd">
 
+	<bean class="de.hybris.platform.cuppyhomework.data.CuppyUserData">
+		<property name="name" type="String"/>
+		<property name="username" type="String"/>
+		<property name="phone" type="String"/>
+		<property name="logIn" type="java.util.Date"/>
+		<property name="password" type="String"/>
+	</bean>
+
 	<!--
 		Example Data POJO
 	
