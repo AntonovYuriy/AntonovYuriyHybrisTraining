@@ -1,6 +1,6 @@
 package de.hybris.platform.cuppyhomework.services.impl;
 
-import de.hybris.platform.cuppyhomework.daos.CuppyUserDAO;
+import de.hybris.platform.cuppyhomework.daos.impl.DefaultCuppyUserDAO;
 import de.hybris.platform.cuppyhomework.model.CuppyUserModel;
 import de.hybris.platform.cuppyhomework.services.CuppyUserService;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
@@ -16,7 +16,7 @@ public class DefaultCuppyUserService implements CuppyUserService {
 
     private ModelService modelService;
 
-    private CuppyUserDAO cuppyUserDAO;
+    private DefaultCuppyUserDAO defaultCuppyUserDAO;
 
     private final static Logger LOG = Logger.getLogger(DefaultCuppyUserService.class);
 
@@ -24,7 +24,7 @@ public class DefaultCuppyUserService implements CuppyUserService {
     public CuppyUserModel getCuppyUserByUserName(String userName) {
 
         try {
-            CuppyUserModel result = cuppyUserDAO.getCuppyUserByUserName(userName);
+            CuppyUserModel result = defaultCuppyUserDAO.getCuppyUserByUserName(userName);
             LOG.info("SERVICE GET USER BY NAME - " + result);
             return result;
         } catch (Exception e) {
@@ -36,7 +36,7 @@ public class DefaultCuppyUserService implements CuppyUserService {
     @Override
     public List<CuppyUserModel> getAllCuppyUsers() {
         LOG.info("SERVICE GET ALL USERS complete");
-        return cuppyUserDAO.getAllCuppyUsers();
+        return defaultCuppyUserDAO.getAllCuppyUsers();
     }
 
     @Override
@@ -59,9 +59,21 @@ public class DefaultCuppyUserService implements CuppyUserService {
         }
     }
 
+    public void deleteUserDaysOld(int daysLimitToDeleteUser) {
+        defaultCuppyUserDAO.getAllCuppyUsers().forEach(cuppyUserModel -> {
+            long diff = cuppyUserModel.getLogIn().getTime() - new java.util.Date().getTime();
+            int diffDays = (int) (diff / (24 * 60 * 60 * 1000));
+            LOG.info(" DATE=" + cuppyUserModel.getLogIn() + " MORE THAN " + daysLimitToDeleteUser + " NOW= " + new java.util.Date());
+            if (diffDays > daysLimitToDeleteUser) {
+                LOG.info("DELETEING diff in days" + diffDays);
+                modelService.remove(cuppyUserModel);
+            }
+        });
+    };
+
     @Required
-    public void setCuppyUserDAO(final CuppyUserDAO cuppyUserDAO) {
-        this.cuppyUserDAO = cuppyUserDAO;
+    public void setDefaultCuppyUserDAO(final DefaultCuppyUserDAO defaultCuppyUserDAO) {
+        this.defaultCuppyUserDAO = defaultCuppyUserDAO;
     }
 
     public void setModelService(DefaultModelService modelService) {

@@ -155,6 +155,7 @@
 				<condition attribute="date"/>
 				<condition attribute="group"/>
 				<condition attribute="hometeam"/>
+				<condition attribute="special"/>
 			</search>
 			<result mode="replace">
 				<listview>
@@ -165,6 +166,7 @@
 						<attribute name="date" width="150"/>
 						<attribute name="group" width="100"/>
 						<attribute name="matchday" width="100"/>
+						<attribute name="special" width="50"/>
 					</itemlayout>
 				</listview>
 			</result>
@@ -186,6 +188,7 @@
 							<attribute name="group"/>
 							<attribute name="matchday"/>
 							<attribute name="matchbets"/>
+							<attribute name="special"/>
 						</listlayout>
 					</section>
 				</tab>

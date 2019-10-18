@@ -8,12 +8,13 @@
 <h1>This is the Cuppy User Details Page</h1>
 
 
-<h1>Hello ${registeredUserName}
+<h1>Hello user ${registeredUserName}
+    </br>
     List of Special matches:</h1>
 <%--CHANGE SPECIAL FIELD--%>
 <ul>
     <c:forEach var="match" items="${matchesSelected}">
-        <li>${match.homeTeam} (${match.homeGoals}) - ${match.guestTeam} (${match.guestGoals}) DATA  ${match.date} SPECIAL = ${match.id}</li>
+        <li>${match.homeTeam} (${match.homeGoals}) - ${match.guestTeam} (${match.guestGoals}) DATA ${match.date}</li>
     </c:forEach>
 </ul>
 

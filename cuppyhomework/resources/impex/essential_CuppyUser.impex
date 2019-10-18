@@ -8,3 +8,15 @@ INSERT_UPDATE CuppyUser; name; username[unique=true]; phone; login[dateformat=dd
 ; User5; test5; 12445467; 10.19.2019 01:01:01; password1
 ; User6; test6; 12445467; 10.20.2019 01:01:01; password1
 ; User7; test7; 12445467; 10.21.2019 01:01:01; password1
+
+INSERT_UPDATE Match; homeTeam; homeGoals; guestTeam; guestGoals; id; special
+; Sweden; 1; England; 1; 12354; true
+; Sweden; 2; England; 3; 12454; true
+; Sweden; 3; England; 4; 12554; true
+; Sweden; 4; England; 3; 12654; true
+; Sweden; 5; England; 3; 12754; true
+; Sweden; 6; England; 4; 12845; true
+; Sweden; 7; England; 5; 12945; true
+; Sweden; 8; England; 3; 130445; true
+; Sweden; 9; England; 2; 13145; true
+; Sweden; 10; England; 6; 13425; true

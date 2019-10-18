@@ -8,7 +8,7 @@
 		<br/>
 		<a href="./allUsersShow">All Users Listing</a>
 		<br/>
-		<a href="./allMatchesShow">All Users Listing</a>
+		<a href="./allMatchesShow">All Matches Listing</a>
 	</body>
 </html>
 

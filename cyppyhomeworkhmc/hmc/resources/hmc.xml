@@ -23,11 +23,11 @@
             <result>
                 <listview mode="replace">
                     <itemlayout>
-                        <attribute name="name"/>
-                        <attribute name="username"/>
-                        <attribute name="phone"/>
-                        <attribute name="logIn"/>
-                        <attribute name="password"/>
+                        <attribute name="name" width="75"/>
+                        <attribute name="username" width="75"/>
+                        <attribute name="phone" width="75"/>
+                        <attribute name="logIn" width="75"/>
+                        <attribute name="password" width="75"/>
                     </itemlayout>
                 </listview>
             </result>

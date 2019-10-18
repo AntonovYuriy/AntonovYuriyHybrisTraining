@@ -12,14 +12,14 @@
     <table style="with: 50%">
         <tr>
             <td>Log in</td>
-            <td><input type="text" name="login" /></td>
+            <td><input type="text" name="login"/></td>
         </tr>
         <tr>
             <td>Password</td>
-            <td><input type="text" name="password" /></td>
+            <td><input type="text" name="password"/></td>
         </tr>
-        </table>
-    <input type="submit" value="Submit" />
+    </table>
+    <input type="submit" value="Submit"/>
 </form>
 
 <br/>

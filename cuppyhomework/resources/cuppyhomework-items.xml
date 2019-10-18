@@ -16,68 +16,79 @@
 	ATTENTION: This is just an example file. You have to edit it according to your needs.
 -->
 
-<items 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-			xsi:noNamespaceSchemaLocation="items.xsd">
+<items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="items.xsd">
 
-	<itemtypes>
+    <itemtypes>
 
-		<itemtype code="CuppyUser" generate="true" autocreate="true">
-			<deployment table="CuppyHomeWorkUser" typecode="10133" />
-			<attributes>
-				<attribute qualifier="name" type="java.lang.String" >
-					<description>Name of user</description>
-					<persistence type="property"/>
-					<modifiers initial="true" optional="false" write="false"/>
-				</attribute>
-				<attribute qualifier="username" type="java.lang.String">
-					<description>Capacity</description>
-					<persistence type="property" />
-					<modifiers unique="true" initial="true" optional="false" write="false"/>
-				</attribute>
-				<attribute qualifier="phone" type="java.lang.String">
-					<description>Phone number</description>
-					<persistence type="property" />
-					<modifiers initial="true" optional="false" write="false"/>
-				</attribute>
-				<attribute qualifier="logIn" type="java.util.Date">
-					<description>Date of last login</description>
-					<persistence type="property" />
-					<modifiers initial="true" optional="false" write="false"/>
-				</attribute>
-				<attribute qualifier="password" type="java.lang.String">
-					<description>Password</description>
-					<persistence type="property" />
-					<modifiers initial="true" optional="false" write="false"/>
-				</attribute>
-			</attributes>
-		</itemtype>
+        <itemtype code="CuppyUser" generate="true" autocreate="true">
+            <deployment table="CuppyHomeWorkUser" typecode="10133"/>
+            <attributes>
+                <attribute qualifier="name" type="java.lang.String">
+                    <description>Name of user</description>
+                    <persistence type="property"/>
+                    <modifiers initial="true" optional="false" write="false"/>
+                </attribute>
+                <attribute qualifier="username" type="java.lang.String">
+                    <description>Capacity</description>
+                    <persistence type="property"/>
+                    <modifiers unique="true" initial="true" optional="false" write="false"/>
+                </attribute>
+                <attribute qualifier="phone" type="java.lang.String">
+                    <description>Phone number</description>
+                    <persistence type="property"/>
+                    <modifiers initial="true" optional="false" write="false"/>
+                </attribute>
+                <attribute qualifier="logIn" type="java.util.Date">
+                    <description>Date of last login</description>
+                    <persistence type="property"/>
+                    <modifiers initial="true" optional="false" write="false"/>
+                </attribute>
+                <attribute qualifier="password" type="java.lang.String">
+                    <description>Password</description>
+                    <persistence type="property"/>
+                    <modifiers initial="true" optional="false" write="false"/>
+                </attribute>
+            </attributes>
+        </itemtype>
+
+        <itemtype code="Match" autocreate="false" generate="false">
+            <attributes>
+                <attribute qualifier="special" type="java.lang.Boolean">
+                    <description>Special field</description>
+                    <persistence type="property" />
+                    <modifiers initial="true" optional="false" write="true"/>
+					<defaultvalue>Boolean.TRUE</defaultvalue>
+                </attribute>
+            </attributes>
+        </itemtype>
 
 
-<!--
-		<itemtype generate="true"
-		   code="MyProduct"
-		   jaloclass="de.hybris.platform.cuppyhomework.jalo.MyProduct"
-		   extends="Product"
-		   autocreate="true"
-	   >
-			<attributes>
-				<attribute qualifier="myExampleInitialStringField" type="java.lang.String">
-					<description>My Example Initial String Value</description>
-					<modifiers initial="true"/>
-					<persistence type="property"/>
-				</attribute>
+        <!--
+                <itemtype generate="true"
+                   code="MyProduct"
+                   jaloclass="de.hybris.platform.cuppyhomework.jalo.MyProduct"
+                   extends="Product"
+                   autocreate="true"
+               >
+                    <attributes>
+                        <attribute qualifier="myExampleInitialStringField" type="java.lang.String">
+                            <description>My Example Initial String Value</description>
+                            <modifiers initial="true"/>
+                            <persistence type="property"/>
+                        </attribute>
 
-				<attribute qualifier="myExampleBooleanField" type="java.lang.Boolean">
-					<description>Example Initial Boolean Field</description>
-               <persistence type="property"/>
-				</attribute>
+                        <attribute qualifier="myExampleBooleanField" type="java.lang.Boolean">
+                            <description>Example Initial Boolean Field</description>
+                       <persistence type="property"/>
+                        </attribute>
 
-				<attribute qualifier="media" type="Media">
-					<persistence type="property"/>
-				</attribute>
+                        <attribute qualifier="media" type="Media">
+                            <persistence type="property"/>
+                        </attribute>
 
-			</attributes>
-		</itemtype>
--->
-	</itemtypes>
+                    </attributes>
+                </itemtype>
+        -->
+    </itemtypes>
 </items>

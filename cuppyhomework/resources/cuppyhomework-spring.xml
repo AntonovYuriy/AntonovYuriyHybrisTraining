@@ -13,25 +13,47 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-           http://www.springframework.org/schema/beans/spring-beans.xsd
-           http://www.springframework.org/schema/aop
-           http://www.springframework.org/schema/aop/spring-aop.xsd">
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!--    USER BEANS-->
 
-    <alias name="cuppyUserDAO" alias="CuppyUserDAO"/>
-    <bean id="cuppyUserDAO" class="de.hybris.platform.cuppyhomework.daos.impl.DefaultCuppyUserDAO"/>
+    <alias name="defaultCuppyUserDAO" alias="defaultCuppyUserDAO"/>
+    <bean id="defaultCuppyUserDAO" class="de.hybris.platform.cuppyhomework.daos.impl.DefaultCuppyUserDAO"/>
 
-    <alias name="defaultCuppyUserService" alias="cuppyUserService"/>
+    <alias name="defaultCuppyUserService" alias="defaultCuppyUserService"/>
     <bean id="defaultCuppyUserService" class="de.hybris.platform.cuppyhomework.services.impl.DefaultCuppyUserService">
-        <property name="cuppyUserDAO" ref="cuppyUserDAO"/>
-        <property name="ModelService" ref="modelService"/>
+        <property name="defaultCuppyUserDAO" ref="defaultCuppyUserDAO"/>
+        <property name="modelService" ref="modelService"/>
     </bean>
 
-    <alias name="defaultCuppyUserFacade" alias="cuppyUserFacade"/>
+    <alias name="defaultCuppyUserFacade" alias="defaultCuppyUserFacade"/>
     <bean id="defaultCuppyUserFacade" class="de.hybris.platform.cuppyhomework.facades.impl.DefaultCuppyUserFacade">
-        <property name="cuppyUserService" ref="defaultCuppyUserService"/>
+        <property name="defaultCuppyUserService" ref="defaultCuppyUserService"/>
+    </bean>
+
+    <!--    MATCH BEANS-->
+
+    <alias name="specialMatchDAO" alias="SpecialMatchDAO"/>
+    <bean id="specialMatchDAO" class="de.hybris.platform.cuppyhomework.daos.impl.SpecialMatchDAO"/>
+
+    <alias name="specialMatchService" alias="specialMatchService"/>
+    <bean id="specialMatchService" class="de.hybris.platform.cuppyhomework.services.impl.SpecialMatchService">
+        <property name="specialMatchDAO" ref="specialMatchDAO"/>
+        <property name="modelService" ref="modelService"/>
+    </bean>
+
+    <alias name="specialMatchFacade" alias="specialMatchFacade"/>
+    <bean id="specialMatchFacade" class="de.hybris.platform.cuppyhomework.facades.impl.SpecialMatchFacade">
+        <property name="specialMatchService" ref="specialMatchService"/>
+    </bean>
+
+    <!--    CRON JOB -->
+
+    <bean id="deleteOldUsersJob" class="de.hybris.platform.cuppyhomework.job.DeleteOldUsersJob" autowire="byName">
+        <property name="flexibleSearchService" ref="flexibleSearchService"/>
+        <property name="modelService" ref="modelService"/>
+        <property name="sessionService" ref="sessionService"/>
     </bean>
 
     <!--
