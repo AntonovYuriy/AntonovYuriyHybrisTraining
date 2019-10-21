@@ -23,5 +23,4 @@ public class SpecialMatchService extends DefaultMatchService {
     public void setSpecialMatchDAO(final SpecialMatchDAO specialMatchDAO) {
         this.specialMatchDAO = specialMatchDAO;
     }
-
 }

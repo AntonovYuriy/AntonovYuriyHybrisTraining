@@ -4,7 +4,6 @@ import de.hybris.platform.cuppyhomework.data.CuppyUserData;
 import de.hybris.platform.cuppyhomework.facades.CuppyUserFacade;
 import de.hybris.platform.cuppyhomework.model.CuppyUserModel;
 import de.hybris.platform.cuppyhomework.services.impl.DefaultCuppyUserService;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Required;
 
 import java.util.ArrayList;
@@ -13,7 +12,6 @@ import java.util.List;
 public class DefaultCuppyUserFacade implements CuppyUserFacade {
 
     private DefaultCuppyUserService defaultCuppyUserService;
-    private static final Logger LOG = Logger.getLogger(DefaultCuppyUserFacade.class);
 
     @Override
     public CuppyUserData getCuppyUserByUserName(String userName) {
@@ -26,7 +24,6 @@ public class DefaultCuppyUserFacade implements CuppyUserFacade {
         } else {
             throw new IllegalArgumentException("Cuppy user with name " + userName + " not found.");
         }
-
         final CuppyUserData cuppyUserData = new CuppyUserData();
         cuppyUserData.setName(cuppyUserModel.getName());
         cuppyUserData.setUsername(cuppyUserModel.getUsername());

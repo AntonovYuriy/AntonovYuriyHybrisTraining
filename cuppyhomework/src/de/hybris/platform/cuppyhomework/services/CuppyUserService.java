@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface CuppyUserService {
 
-    CuppyUserModel getCuppyUserByUserName (String userName);
+    CuppyUserModel getCuppyUserByUserName(String userName);
 
-    List<CuppyUserModel> getAllCuppyUsers ();
+    List<CuppyUserModel> getAllCuppyUsers();
 
     void addNewUser(String name, String username, String phone, String password);
 }

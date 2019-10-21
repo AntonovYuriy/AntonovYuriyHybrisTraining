@@ -9,7 +9,8 @@ public class LogOffController {
 
     @RequestMapping(value = "/cuppyUser/logOff")
     public String cuppyUserLogOff(final Model model) {
-        model.addAttribute("loginConfirmator", "loginNOTconfirmed");
+        de.hybris.platform.util.Config.setParameter("isUserLoggedIn","false");
+        de.hybris.platform.util.Config.setParameter("loggedUserName","");
         return "CuppyUserLogin";
     }
 
