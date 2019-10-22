@@ -50,7 +50,7 @@
 
     <!--    CRON JOB -->
 
-    <bean id="deleteOldUsersJob" class="de.hybris.platform.cuppyhomework.job.DeleteOldUsersJob" autowire="byName">
+    <bean id="deleteOldUsersJob" class="de.hybris.platform.cuppyhomework.job.DeleteOldUsersJob">
         <property name="flexibleSearchService" ref="flexibleSearchService"/>
         <property name="modelService" ref="modelService"/>
         <property name="sessionService" ref="sessionService"/>

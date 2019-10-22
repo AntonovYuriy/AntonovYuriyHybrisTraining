@@ -3,6 +3,7 @@ package de.hybris.platform.cuppyhomework.controller;
 import de.hybris.platform.cuppyhomework.data.CuppyUserData;
 import de.hybris.platform.cuppyhomework.facades.impl.DefaultCuppyUserFacade;
 import de.hybris.platform.cuppyhomework.facades.impl.SpecialMatchFacade;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +22,7 @@ public class LoginPageController {
             @RequestParam(value = "login", required = false) String login,
             @RequestParam(value = "password", required = false) String password,
             final Model model) {
-        if ((!login.isEmpty()) && (!password.isEmpty())) {
+        if ( StringUtils.isNotEmpty(login) && (!password.isEmpty())) {
             try {
                 CuppyUserData cuppyUserData = defaultCuppyUserFacade.getCuppyUserByUserName(login);
                 if ((cuppyUserData.getUsername().equals(login)) && (cuppyUserData.getPassword().equals(password))) {

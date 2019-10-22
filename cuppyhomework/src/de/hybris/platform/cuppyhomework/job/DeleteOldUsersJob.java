@@ -9,15 +9,10 @@ import de.hybris.platform.servicelayer.cronjob.AbstractJobPerformable;
 import de.hybris.platform.servicelayer.cronjob.PerformResult;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.annotation.Resource;
 
 public class DeleteOldUsersJob extends AbstractJobPerformable<CronJobModel> {
 
     private DefaultCuppyUserFacade defaultCuppyUserFacade;
-
-    @Resource(name = "defaultConfigurationService")
-    private ConfigurationService configurationService;
-
 
     @Override
     public PerformResult perform(CronJobModel cronJobModel) {

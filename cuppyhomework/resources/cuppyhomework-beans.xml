@@ -25,6 +25,14 @@
 		<property name="password" type="String"/>
 	</bean>
 
+	<bean class="de.hybris.platform.cuppyhomework.data.MatchData">
+		<property name="name" type="String"/>
+		<property name="username" type="String"/>
+		<property name="phone" type="String"/>
+		<property name="logIn" type="java.util.Date"/>
+		<property name="password" type="String"/>
+	</bean>
+
 	<!--
 		Example Data POJO
 	
