@@ -1,6 +1,6 @@
 //https://wiki.hybris.com/display/R5T/Trail+~+Validation
 //https://wiki.hybris.com/display/release5/Data+Validation+Framework
-        
+
 package de.hybris.platform.cuppyhomework.constraints;
 
 import org.apache.commons.lang.StringUtils;
